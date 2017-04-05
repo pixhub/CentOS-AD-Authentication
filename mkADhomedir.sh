@@ -11,7 +11,7 @@ IP="10.2.7.1"
 #FQDN de l'OU oùl'on ecupere les comptes
 OU="OU=DCI,DC=intra,DC=dci-fr,DC=com"
 #USER=CN=ldap-cns,OU=Comptes\ de\ services,OU=DCI,DC=intra,DC=dci-fr,DC=com
-PASS="2r11oAo2MNqrGq2oYXjM"
+PASS="XXXXXXXXXXXXXXXXX"
 FILTER1="sAMAccountName=*"
 FILTER2="objectClass=user"
 FILTER3=memberOf=CN=UtilisateursFTP,OU=Acces\ aux\ applications,OU=Groupes\ du\ domaine,OU=DCI,DC=intra,DC=dci-fr,DC=com
