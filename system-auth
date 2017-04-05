@@ -1,0 +1,20 @@
+#%PAM-1.0
+auth        required      pam_env.so
+auth        optional      pam_mount.so try_first_pass
+auth        sufficient    pam_krb5.so
+auth        sufficient    pam_unix.so likeauth nullok use_first_pass
+auth        required      pam_deny.so
+
+account     sufficient    pam_unix.so
+account     [default=bad success=ok user_unknown=ignore service_err=ignore system_err=ignore] pam_krb5.so
+
+password    required      pam_cracklib.so retry=3
+password    sufficient    pam_unix.so nullok use_authtok md5 shadow
+password    sufficient    pam_krb5.so use_authtok
+password    required      pam_deny.so
+
+session     required      pam_limits.so
+session     optional      pam_krb5.so
+session     optional      pam_mkhomedir.so skel=/etc/skel/ umask=077 silent
+session     optional      pam_mount.so
+session     required      pam_unix.so
